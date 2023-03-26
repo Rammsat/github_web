@@ -39,13 +39,13 @@
 [К оглавлению ⬆](#оглавление)
 
 <a name="запуск_дженкинс"></a>
-# Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/tochka_tests/) выглядит следующим образом
+# Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/github_web/) выглядит следующим образом
 Главная страница сборки
 ![](media/image.png)
 [К оглавлению ⬆](#оглавление)
 
 <a name="report"></a>
-# [Отчет](https://jenkins.autotests.cloud/job/github_web/3/allure/) о выполнении тестов
+# [Отчет](https://jenkins.autotests.cloud/job/github_web/8/allure/#) о выполнении тестов
 ![](media/allurereport_ui.png)
 
 Каждый тест, независимо от результата, состоит из:

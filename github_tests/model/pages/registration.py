@@ -1,4 +1,3 @@
-import time
 from selene import have, be
 from selene.support.shared import browser
 from allure import step as title
@@ -23,19 +22,16 @@ def continue_after_filling_email():
 
 def continue_after_filling_password():
     with title('Продолжить после заполнения пароля'):
-        time.sleep(1)
         press.enter('#password')
 
 
 def continue_after_filling_username():
     with title('Продолжить после заполнения имени пользователя'):
-        time.sleep(1)
         press.enter('#login')
 
 
 def continue_after_filling_notification():
     with title('Продолжить после заполнения согласия на нотификацию'):
-        time.sleep(3)
         press.enter('#opt_in')
 
 

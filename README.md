@@ -73,13 +73,13 @@
 
 [К оглавлению ⬆](#оглавление)
 <a name="проект"></a>
-# Создан проект в Allure TestOps
+# Создан проект в [Allure TestOps](https://allure.autotests.cloud/project/2071/test-cases?treeId=0)
 ![](media/testops_ui.png)
 
 
 [К оглавлению ⬆](#оглавление)
 <a name="дашборд"></a>
-# Настроен Dashboard с разными показателями
+# Настроен [Dashboard](https://allure.autotests.cloud/project/2071/dashboards) с разными показателями
 ![](media/testops_ui2.png)
 
 [К оглавлению ⬆](#оглавление)

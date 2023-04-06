@@ -1,5 +1,10 @@
 from selene.support.shared import browser
 
 
-def on_element(selector):
-    browser.element(selector).click()
+class Click:
+    def __init__(self, selector):
+        self.selector = selector
+
+    def on_element(self):
+        browser.element(self.selector).click()
+        return self

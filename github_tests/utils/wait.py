@@ -1,11 +1,14 @@
-from selene import have, be
+from selene import be
 from selene.support.shared import browser
 
 
-def for_element(selector):
-    browser.element(selector).wait_until(be.enabled)
+class Wait:
 
+    def for_element(self, selector):
+        browser.element(selector).wait_until(be.enabled)
+        return self
 
-def for_element_for_click(selector):
-    browser.element(selector).wait_until(be.clickable)
-    browser.element(selector).click()
+    def for_element_for_click(self, selector):
+        browser.element(selector).wait_until(be.clickable)
+        browser.element(selector).click()
+        return self

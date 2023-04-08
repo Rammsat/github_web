@@ -1,13 +1,16 @@
-from github_tests.model.pages.sign_in import Sign_in
+from github_tests.model.pages.signin import SignIn
 from github_tests.model.pages.main import Main
+from github_tests.utils.window_size import WindowSize
 from github_tests.model import app
 import os
+import pytest
 
 
 login_github = os.getenv('login_github')
 password_github = os.getenv('password_github')
 main = Main()
-sign_in = Sign_in()
+sign_in = SignIn()
+window_size = WindowSize()
 
 
 def test_open_login_page():
@@ -29,8 +32,10 @@ def test_unsuccessful_login():
     sign_in.assert_login_has_not_been_completed()
 
 
-def test_close_alert_about_failed_login():
+@pytest.mark.parametrize('width, height', [(1920, 1080), (1080, 720)])
+def test_close_alert_about_failed_login(width, height):
     app.open_browser()
+    window_size.set(width, height)
 
     main.open_login_page()
     sign_in.type_login(login_github)

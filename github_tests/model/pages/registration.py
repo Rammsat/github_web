@@ -1,11 +1,15 @@
 from selene import have, be
 from selene.support.shared import browser
 from allure import step as title
-from github_tests.utils import wait
+from github_tests.utils.wait import Wait
 import os
-from github_tests.model.controls import fill, press
+from github_tests.model.controls.press import Press
+from github_tests.model.controls.fill import Fill
 
 login_github = os.getenv('login_github')
+press = Press()
+fill = Fill()
+wait = Wait()
 
 
 class Registration:
@@ -42,12 +46,12 @@ class Registration:
 
     def type_username(self, value):
         with title('Ввести имя пользователя'):
-            fill.field('#login', value)
+            fill.field('#password', value)
             return self
 
     def reject_notification(self):
         with title('Отказаться от нотификаций на почту'):
-            fill.field('#opt_in', 'n')
+            fill.field('#password', 'n')
             return self
 
     def assert_successful_registration(self):

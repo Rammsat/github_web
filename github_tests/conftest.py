@@ -1,11 +1,13 @@
 import allure
-from github_tests.utils import attach
+from github_tests.utils.attach import Attach
 import pytest
 import os
 from selene.support.shared import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from dotenv import load_dotenv
+
+attach = Attach()
 
 
 @pytest.fixture(scope='function', autouse=True)

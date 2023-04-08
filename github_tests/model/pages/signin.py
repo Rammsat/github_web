@@ -1,11 +1,14 @@
 from selene import have, be
 from selene.support.shared import browser
 from allure import step as title
-from github_tests.model.controls import fill
+from github_tests.model.controls.fill import Fill
 from github_tests.model.controls.click import Click
 
+fill = Fill()
+click = Click()
 
-class Sign_in:
+
+class SignIn:
     def type_login(self, value):
         with title('Ввести логин'):
             fill.field('#login_field', value)
@@ -18,7 +21,7 @@ class Sign_in:
 
     def click_on_sign_in(self):
         with title('Нажать на кнопку авторизации'):
-            Click('[value="Sign in"]').on_element()
+            click.on_element('[value="Sign in"]')
             return self
 
     def close_login_alert(self):

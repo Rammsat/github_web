@@ -1,14 +1,17 @@
 from selene import have, be, by
 from selene.support.shared import browser
 from allure import step as title
-from github_tests.model.controls import fill, click, press
+from github_tests.model.controls.press import Press
+from github_tests.model.controls.click import Click
+from github_tests.model.controls.fill import Fill
+
+
+fill = Fill()
+click = Click()
+press = Press()
 
 
 class Main:
-    def open_browser(self):
-        with title('Открыть браузер'):
-            browser.open('/')
-            return self
 
     def open_login_page(self):
         with title('Открыть страницу авторизации'):

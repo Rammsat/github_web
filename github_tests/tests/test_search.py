@@ -1,14 +1,18 @@
 from github_tests.model.pages.main import Main
 from github_tests.model import app
+from github_tests.utils.window_size import WindowSize
 import os
-
+import pytest
 
 login_github = os.getenv('login_github')
 main = Main()
+window_size = WindowSize()
 
 
-def test_successful_search():
+@pytest.mark.parametrize('width, height', [(1920, 1080), (1080, 720)])
+def test_successful_search(width, height):
     app.open_browser()
+    window_size.set(width, height)
 
     main.find_repository(login_github)
 
